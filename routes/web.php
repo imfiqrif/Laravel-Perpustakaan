@@ -2,31 +2,20 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::get('/', 'BukuController@index');
 
-Route::get('/', 'DashboardController@index');
-Route::get('anggota', 'AnggotaController@index');
-Route::get('anggota.tambah', 'AnggotaController@tambah');
-Route::get('anggota.cari', 'BukuController@cari');
-Route::get('anggota.edit', 'BukuController@edit');
+Route::resource('anggota', 'AnggotaController');
 
-Route::get('buku', 'BukuController@index');
-Route::get('buku.tambah', 'BukuController@tambah');
-Route::get('buku.cari', 'BukuController@cari');
-Route::get('buku.edit', 'BukuController@edit');
+Route::resource('buku', 'BukuController');
 
-// Route::get('/petugas', 'PetugasController@index');
-// Route::get('/peminjaman', 'PeminjamanController@index');
-// Route::get('/pengembalian', 'PengembalianController@index');
-Route::get('/', 'DashboardController@index');
-Route::get('/', 'DashboardController@index');
-Route::get('/', 'DashboardController@index');
+// Route::get('/format_buku', 'BukuController@format');
+// Route::post('/import_buku', 'BukuController@import');
+
+// Route::resource('transaksi', 'TransaksiController');
+// Route::get('/laporan/trs', 'LaporanController@transaksi');
+// Route::get('/laporan/trs/pdf', 'LaporanController@transaksiPdf');
+// Route::get('/laporan/trs/excel', 'LaporanController@transaksiExcel');
+
+// Route::get('/laporan/buku', 'LaporanController@buku');
+// Route::get('/laporan/buku/pdf', 'LaporanController@bukuPdf');
+// Route::get('/laporan/buku/excel', 'LaporanController@bukuExcel');
